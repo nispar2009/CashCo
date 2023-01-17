@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block t %}{% endblock %} &middot; CashCo</title>
+    <link rel="stylesheet" href="https://nispar2009.github.io/spectrum_stylr/General/Spectrum.css">
+    <script src="https://nispar2009.github.io/spectrum_stylr/Spectrum.js"></script>
+</head>
+
+<body>
+    <div class="nav-desktop bg-light">
+        <a class="nav-desktop-item nav-desktop-link nav-desktop-brand" href="/">Home</a>
+        <a class="nav-desktop-item nav-desktop-link" href="/msg">Messages</a>
+        <a class="nav-desktop-item nav-desktop-link" href="http://127.0.0.1:5001">MoneyMaster</a>
+        <a class="nav-desktop-item nav-desktop-link" href="http://127.0.0.1:5002">BoxBuddy</a>
+        <a class="nav-desktop-item nav-desktop-link" href="/signout">Sign out</a>
+    </div>
+    {% block b %}{% endblock %}
+</body>
+
+</html>

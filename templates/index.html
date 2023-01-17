@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block t %}Home{% endblock %}
+
+{% block b %}
+
+<h1 class="text-purple">Welcome to CashCo, {{ user }}!</h1>
+<div class="section-light">
+    <p>
+        We are an innovative group.
+        We also offer a number of commercial services.
+        We are the creators of MoneyMaster, a simple to use banking service; and BoxBuddy, a powerful eCommerce site.
+        Sign in to these services with your CashCo account.
+    </p>
+</div>
+<div class="section-dark">
+    <button class="btn btn-green-outline btn-rounded" onclick="redirect('http://127.0.0.1:5001')">MoneyMaster</button>
+    <button class="btn btn-green-outline btn-rounded" onclick="redirect('http://127.0.0.1:5002')">BoxBuddy</button>
+</div>
+
+{% endblock %}

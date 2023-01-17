@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block t %}Messages{% endblock %}
+
+{% block b %}
+
+<h1 class="text-blue">View incoming messages from CashCo</h1>
+
+You have {{ len(all_msg) }} messages in Cashco.
+
+<ul>
+    {% for msg in all_msg %}
+    <li>
+        {{ msg[2] }} ({{ msg[3] }})
+        &mdash;
+        {% if msg[0] == 5001 %}MoneyMaster{% elif msg[0] == 5002 %}BoxBuddy{% endif %}
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
