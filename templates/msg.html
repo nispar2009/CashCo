@@ -10,8 +10,7 @@ You have {{ len(all_msg) }} messages in Cashco.
 <ul>
     {% for msg in all_msg %}
     <li>
-        {{ msg[2] }} ({{ msg[3] }})
-        &mdash;
+        {{ msg[2] }} &mdash;
         {% if msg[0] == 5001 %}MoneyMaster{% elif msg[0] == 5002 %}BoxBuddy{% endif %}
     </li>
     {% endfor %}

@@ -8,7 +8,7 @@ connection = sqlite3.connect('cashco.db')
 cursor = connection.cursor()
 
 cursor.execute('CREATE TABLE IF NOT EXISTS users (username text, password text, balance int)')
-cursor.execute('CREATE TABLE IF NOT EXISTS msg (feature int, receiver text, cnt text, date datetime)')
+cursor.execute('CREATE TABLE IF NOT EXISTS msg (feature int, receiver text, cnt text)')
 
 connection.commit()
 connection.close()
@@ -58,8 +58,8 @@ def msg():
     cursor = connection.cursor()
     
     if len(list(cursor.execute('SELECT * FROM users WHERE username=?', (request.cookies.get('cashco_user'),)))) > 0:
-        all_msg = cursor.execute('SELECT * FROM msg WHERE receiver=?', ((request.cookies.get('cashco_user')),))
-        return render_template('msg.html', msg=list(all_msg))
+        all_msg = list(cursor.execute('SELECT * FROM msg WHERE receiver=?', ((request.cookies.get('cashco_user')),)))
+        return render_template('msg.html', all_msg=all_msg, len=len)
 
     connection.close()
     
